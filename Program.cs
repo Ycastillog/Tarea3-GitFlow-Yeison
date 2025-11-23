@@ -3,35 +3,53 @@ using System.Collections.Generic;
 
 class Program
 {
+    
     static List<string> items = new List<string>();
 
     static void Main()
     {
-        Console.WriteLine("=== Sistema CRUD - Gestión de Items ===");
-        Console.WriteLine("1. Crear item");
-        Console.WriteLine("2. Listar items");
-        Console.WriteLine("Seleccione una opción:");
+        while (true)
+        {
+            Console.WriteLine("=== Sistema CRUD - Gestión de Items ===");
+            Console.WriteLine("1. Crear item");
+            Console.WriteLine("2. Listar items");
+            Console.WriteLine("3. Actualizar item");
+            Console.WriteLine("0. Salir");
+            Console.Write("Seleccione una opción: ");
 
-        string option = Console.ReadLine();
+            string? option = Console.ReadLine();
 
-        if (option == "1")
-        {
-            CreateItem();
-        }
-        else if (option == "2")
-        {
-            ListItems();
-        }
-        else
-        {
-            Console.WriteLine("Opción no válida");
+            switch (option)
+            {
+                case "1":
+                    CreateItem();
+                    break;
+
+                case "2":
+                    ListItems();
+                    break;
+
+                case "3":
+                    UpdateItem();
+                    break;
+
+                case "0":
+                    // Salimos del programa
+                    return;
+
+                default:
+                    Console.WriteLine("Opción no válida");
+                    break;
+            }
+
+            Console.WriteLine();
         }
     }
 
     static void CreateItem()
     {
-        Console.WriteLine("Ingrese el nombre del item:");
-        string item = Console.ReadLine();
+        Console.Write("Ingrese el nombre del item: ");
+        string? item = Console.ReadLine();
 
         if (!string.IsNullOrWhiteSpace(item))
         {
@@ -59,4 +77,43 @@ class Program
             Console.WriteLine($"- {item}");
         }
     }
+
+    static void UpdateItem()
+    {
+        if (items.Count == 0)
+        {
+            Console.WriteLine("No hay items para actualizar.");
+            return;
+        }
+
+        Console.Write("Ingrese el nombre del item a modificar: ");
+        string? oldItem = Console.ReadLine();
+
+        if (string.IsNullOrWhiteSpace(oldItem))
+        {
+            Console.WriteLine("El nombre no puede estar vacío.");
+            return;
+        }
+
+        if (!items.Contains(oldItem))
+        {
+            Console.WriteLine("El item no existe.");
+            return;
+        }
+
+        Console.Write("Ingrese el nuevo nombre del item: ");
+        string? newItem = Console.ReadLine();
+
+        if (string.IsNullOrWhiteSpace(newItem))
+        {
+            Console.WriteLine("El nuevo nombre no puede estar vacío.");
+            return;
+        }
+
+        int index = items.IndexOf(oldItem);
+        items[index] = newItem;
+
+        Console.WriteLine($"Item actualizado correctamente: {newItem}");
+    }
 }
+
