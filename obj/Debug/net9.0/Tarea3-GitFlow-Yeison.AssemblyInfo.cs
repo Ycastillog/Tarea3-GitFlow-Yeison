@@ -13,7 +13,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Tarea3-GitFlow-Yeison")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e66a91e748eab42f1ff881d5c57eb86665cc918")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+db0912ddedd5d7fd05690d577d887f95f96d771b")]
+>>>>>>> 65a6d622769c207aeea8bf001fdc05dc4c1a7e8e
 [assembly: System.Reflection.AssemblyProductAttribute("Tarea3-GitFlow-Yeison")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Tarea3-GitFlow-Yeison")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
