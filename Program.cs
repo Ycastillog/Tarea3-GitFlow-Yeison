@@ -16,7 +16,7 @@ class Program
     static void CreateItem()
     {
         Console.WriteLine("Ingrese el nombre del item:");
-        string item = Console.ReadLine();
+        string? item = Console.ReadLine();
 
         if (!string.IsNullOrWhiteSpace(item))
         {
