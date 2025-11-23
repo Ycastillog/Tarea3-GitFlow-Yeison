@@ -8,9 +8,24 @@ class Program
     static void Main()
     {
         Console.WriteLine("=== Sistema CRUD - Gestión de Items ===");
-        Console.WriteLine("Funcionalidad: Crear item");
+        Console.WriteLine("1. Crear item");
+        Console.WriteLine("2. Listar items");
+        Console.WriteLine("Seleccione una opción:");
 
-        CreateItem();
+        string option = Console.ReadLine();
+
+        if (option == "1")
+        {
+            CreateItem();
+        }
+        else if (option == "2")
+        {
+            ListItems();
+        }
+        else
+        {
+            Console.WriteLine("Opción no válida");
+        }
     }
 
     static void CreateItem()
@@ -26,6 +41,22 @@ class Program
         else
         {
             Console.WriteLine("No se puede agregar un item vacío.");
+        }
+    }
+
+    static void ListItems()
+    {
+        Console.WriteLine("=== ITEMS REGISTRADOS ===");
+
+        if (items.Count == 0)
+        {
+            Console.WriteLine("No existen items aún.");
+            return;
+        }
+
+        foreach (var item in items)
+        {
+            Console.WriteLine($"- {item}");
         }
     }
 }
