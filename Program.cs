@@ -4,6 +4,7 @@ using System.Collections.Generic;
 class Program
 {
     static List<string> items = new List<string>();
+    // Yeison Castillo - 2023-1688
 
     static void Main()
     {
