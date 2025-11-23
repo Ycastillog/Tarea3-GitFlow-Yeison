@@ -1,10 +1,9 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 
 class Program
 {
     static List<string> items = new List<string>();
-    // Yeison Castillo - 2023-1688
 
     static void Main()
     {
@@ -23,7 +22,7 @@ class Program
         {
             ListItems();
         }
-        else 
+        else
         {
             Console.WriteLine("Opción no válida");
         }
@@ -61,3 +60,4 @@ class Program
         }
     }
 }
+
