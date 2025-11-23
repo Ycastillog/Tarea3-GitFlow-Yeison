@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 class Program
 {
+    // Lista en memoria para almacenar los items
     static List<string> items = new List<string>();
 
     static void Main()
@@ -60,4 +61,3 @@ class Program
         }
     }
 }
-
