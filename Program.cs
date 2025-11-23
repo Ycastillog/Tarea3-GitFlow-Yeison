@@ -7,7 +7,7 @@ class Program
 
     static void Main()
     {
-        Console.WriteLine("=== Sistema CRUD - Gestión de Items ===");
+        Console.WriteLine(" Sistema CRUD - Gestión de Items ");
         Console.WriteLine("1. Crear item");
         Console.WriteLine("2. Listar items");
         Console.WriteLine("Seleccione una opción:");
@@ -46,7 +46,7 @@ class Program
 
     static void ListItems()
     {
-        Console.WriteLine("=== ITEMS REGISTRADOS ===");
+        Console.WriteLine("ITEMS REGISTRADOS ");
 
         if (items.Count == 0)
         {
