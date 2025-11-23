@@ -1,0 +1,15 @@
+C:\xampp\htdocs\incidencias\Tarea3-GitFlow-Yeison\obj\Debug\net9.0\Tarea3-GitFlow-Yeison.GeneratedMSBuildEditorConfig.editorconfig
+C:\xampp\htdocs\incidencias\Tarea3-GitFlow-Yeison\obj\Debug\net9.0\Tarea3-GitFlow-Yeison.AssemblyInfoInputs.cache
+C:\xampp\htdocs\incidencias\Tarea3-GitFlow-Yeison\obj\Debug\net9.0\Tarea3-GitFlow-Yeison.AssemblyInfo.cs
+C:\xampp\htdocs\incidencias\Tarea3-GitFlow-Yeison\obj\Debug\net9.0\Tarea3-GitFlow-Yeison.csproj.CoreCompileInputs.cache
+C:\xampp\htdocs\incidencias\Tarea3-GitFlow-Yeison\obj\Debug\net9.0\Tarea3-GitFlow-Yeison.sourcelink.json
+C:\xampp\htdocs\incidencias\Tarea3-GitFlow-Yeison\bin\Debug\net9.0\Tarea3-GitFlow-Yeison.exe
+C:\xampp\htdocs\incidencias\Tarea3-GitFlow-Yeison\bin\Debug\net9.0\Tarea3-GitFlow-Yeison.deps.json
+C:\xampp\htdocs\incidencias\Tarea3-GitFlow-Yeison\bin\Debug\net9.0\Tarea3-GitFlow-Yeison.runtimeconfig.json
+C:\xampp\htdocs\incidencias\Tarea3-GitFlow-Yeison\bin\Debug\net9.0\Tarea3-GitFlow-Yeison.dll
+C:\xampp\htdocs\incidencias\Tarea3-GitFlow-Yeison\bin\Debug\net9.0\Tarea3-GitFlow-Yeison.pdb
+C:\xampp\htdocs\incidencias\Tarea3-GitFlow-Yeison\obj\Debug\net9.0\Tarea3-GitFlow-Yeison.dll
+C:\xampp\htdocs\incidencias\Tarea3-GitFlow-Yeison\obj\Debug\net9.0\refint\Tarea3-GitFlow-Yeison.dll
+C:\xampp\htdocs\incidencias\Tarea3-GitFlow-Yeison\obj\Debug\net9.0\Tarea3-GitFlow-Yeison.pdb
+C:\xampp\htdocs\incidencias\Tarea3-GitFlow-Yeison\obj\Debug\net9.0\Tarea3-GitFlow-Yeison.genruntimeconfig.cache
+C:\xampp\htdocs\incidencias\Tarea3-GitFlow-Yeison\obj\Debug\net9.0\ref\Tarea3-GitFlow-Yeison.dll
