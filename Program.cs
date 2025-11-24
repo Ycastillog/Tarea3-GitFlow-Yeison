@@ -8,15 +8,9 @@ class Program
 
     static void Main()
     {
-<<<<<<< HEAD
-        Console.WriteLine(" Sistema CRUD - Gestión de Items ");
-        Console.WriteLine("1. Crear item");
-        Console.WriteLine("2. Listar items");
-        Console.WriteLine("Seleccione una opción:");
-=======
         while (true)
         {
-            Console.WriteLine(" Sistema CRUD - Gestión de Items ");
+            Console.WriteLine("=== Sistema CRUD - Gestión de Items ===");
             Console.WriteLine("1. Crear item");
             Console.WriteLine("2. Listar items");
             Console.WriteLine("3. Actualizar item");
@@ -24,7 +18,6 @@ class Program
             Console.WriteLine("5. Buscar item");
             Console.WriteLine("0. Salir");
             Console.Write("Seleccione una opción: ");
->>>>>>> 65a6d622769c207aeea8bf001fdc05dc4c1a7e8e
 
             string? option = Console.ReadLine();
             Console.WriteLine();
@@ -65,14 +58,15 @@ class Program
 
     static void CreateItem()
     {
-        Console.WriteLine(" CREAR ITEM ");
+        Console.WriteLine("=== CREAR ITEM ===");
         Console.Write("Ingrese el nombre del item: ");
         string? item = Console.ReadLine();
 
         if (!string.IsNullOrWhiteSpace(item))
         {
-            items.Add(item.Trim());
-            Console.WriteLine($"Item agregado correctamente: {item}");
+            string normalized = item.Trim();
+            items.Add(normalized);
+            Console.WriteLine($"Item agregado correctamente: {normalized}");
         }
         else
         {
@@ -82,11 +76,7 @@ class Program
 
     static void ListItems()
     {
-<<<<<<< HEAD
-        Console.WriteLine("ITEMS REGISTRADOS ");
-=======
-        Console.WriteLine(" ITEMS REGISTRADOS ");
->>>>>>> 65a6d622769c207aeea8bf001fdc05dc4c1a7e8e
+        Console.WriteLine("=== ITEMS REGISTRADOS ===");
 
         if (items.Count == 0)
         {
@@ -102,7 +92,7 @@ class Program
 
     static void UpdateItem()
     {
-        Console.WriteLine(" ACTUALIZAR ITEM ");
+        Console.WriteLine("=== ACTUALIZAR ITEM ===");
 
         if (items.Count == 0)
         {
@@ -130,15 +120,16 @@ class Program
             return;
         }
 
+        string trimmedName = newName.Trim();
         string oldName = items[index - 1];
-        items[index - 1] = newName.Trim();
+        items[index - 1] = trimmedName;
 
-        Console.WriteLine($"Item actualizado correctamente: '{oldName}' ahora es '{newName}'.");
+        Console.WriteLine($"Item actualizado correctamente: '{oldName}' ahora es '{trimmedName}'.");
     }
 
     static void DeleteItem()
     {
-        Console.WriteLine(" ELIMINAR ITEM ");
+        Console.WriteLine("=== ELIMINAR ITEM ===");
 
         if (items.Count == 0)
         {
@@ -165,7 +156,7 @@ class Program
 
     static void SearchItem()
     {
-        Console.WriteLine(" BUSCAR ITEMS ");
+        Console.WriteLine("=== BUSCAR ITEMS ===");
 
         if (items.Count == 0)
         {
@@ -183,7 +174,9 @@ class Program
         }
 
         term = term.Trim();
-        var results = items.FindAll(item => item.Contains(term, StringComparison.OrdinalIgnoreCase));
+        List<string> results = items.FindAll(
+            item => item.Contains(term, StringComparison.OrdinalIgnoreCase)
+        );
 
         if (results.Count == 0)
         {
@@ -192,11 +185,9 @@ class Program
         }
 
         Console.WriteLine("Coincidencias encontradas:");
-        foreach (var r in results)
+        foreach (string r in results)
         {
             Console.WriteLine($"- {r}");
         }
     }
 }
-
-
