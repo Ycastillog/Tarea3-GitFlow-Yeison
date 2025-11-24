@@ -161,7 +161,7 @@ class Program
             Console.WriteLine("No hay items para buscar.");
             return;
         }
-
+// Solicitar término de búsqueda Yeison Castillo 2023-1688
         Console.Write("Ingrese texto a buscar: ");
         string? term = Console.ReadLine();
 
