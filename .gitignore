@@ -1,12 +1,8 @@
-# Build and cache folders
 bin/
 obj/
-
-# VSCode settings
-.vscode/
-
-# Debug / compiled files
-*.pdb
 *.dll
 *.exe
+*.pdb
 *.cache
+*.json
+
