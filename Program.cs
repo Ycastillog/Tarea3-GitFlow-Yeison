@@ -53,8 +53,9 @@ class Program
 
         if (!string.IsNullOrWhiteSpace(item))
         {
-            items.Add(item);
-            Console.WriteLine($"Item agregado correctamente: {item}");
+            string normalized = item.Trim();
+            items.Add(normalized);
+            Console.WriteLine($"Item agregado correctamente: {normalized}");
         }
         else
         {
@@ -72,9 +73,110 @@ class Program
             return;
         }
 
-        foreach (var item in items)
+        for (int i = 0; i < items.Count; i++)
         {
-            Console.WriteLine($"- {item}");
+            Console.WriteLine($"{i + 1}. {items[i]}");
+        }
+    }
+
+    static void UpdateItem()
+    {
+        Console.WriteLine("=== ACTUALIZAR ITEM ===");
+
+        if (items.Count == 0)
+        {
+            Console.WriteLine("No hay items para actualizar.");
+            return;
+        }
+
+        ListItems();
+        Console.WriteLine();
+        Console.Write("Ingrese el número del item a actualizar: ");
+        string? input = Console.ReadLine();
+
+        if (!int.TryParse(input, out int index) || index < 1 || index > items.Count)
+        {
+            Console.WriteLine("Número de item inválido.");
+            return;
+        }
+
+        Console.Write("Ingrese el nuevo nombre del item: ");
+        string? newName = Console.ReadLine();
+
+        if (string.IsNullOrWhiteSpace(newName))
+        {
+            Console.WriteLine("El nombre no puede estar vacío.");
+            return;
+        }
+
+        string trimmedName = newName.Trim();
+        string oldName = items[index - 1];
+        items[index - 1] = trimmedName;
+
+        Console.WriteLine($"Item actualizado correctamente: '{oldName}' ahora es '{trimmedName}'.");
+    }
+
+    static void DeleteItem()
+    {
+        Console.WriteLine("=== ELIMINAR ITEM ===");
+
+        if (items.Count == 0)
+        {
+            Console.WriteLine("No hay items para eliminar.");
+            return;
+        }
+
+        ListItems();
+        Console.WriteLine();
+        Console.Write("Ingrese el número del item a eliminar: ");
+        string? input = Console.ReadLine();
+
+        if (!int.TryParse(input, out int index) || index < 1 || index > items.Count)
+        {
+            Console.WriteLine("Número de item inválido.");
+            return;
+        }
+
+        string removed = items[index - 1];
+        items.RemoveAt(index - 1);
+
+        Console.WriteLine($"Item eliminado correctamente: {removed}");
+    }
+
+    static void SearchItem()
+    {
+        Console.WriteLine("=== BUSCAR ITEMS ===");
+
+        if (items.Count == 0)
+        {
+            Console.WriteLine("No hay items para buscar.");
+            return;
+        }
+
+        Console.Write("Ingrese texto a buscar: ");
+        string? term = Console.ReadLine();
+
+        if (string.IsNullOrWhiteSpace(term))
+        {
+            Console.WriteLine("El término de búsqueda no puede estar vacío.");
+            return;
+        }
+
+        term = term.Trim();
+        List<string> results = items.FindAll(
+            item => item.Contains(term, StringComparison.OrdinalIgnoreCase)
+        );
+
+        if (results.Count == 0)
+        {
+            Console.WriteLine("No se encontraron coincidencias.");
+            return;
+        }
+
+        Console.WriteLine("Coincidencias encontradas:");
+        foreach (string r in results)
+        {
+            Console.WriteLine($"- {r}");
         }
     }
 
