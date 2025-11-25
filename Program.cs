@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 class Program
 {
-    // Lista de items en memoria
+    
     static List<string> items = new List<string>();
 
     static void Main()
@@ -14,13 +14,10 @@ class Program
             Console.WriteLine("1. Crear item");
             Console.WriteLine("2. Listar items");
             Console.WriteLine("3. Actualizar item");
-            Console.WriteLine("4. Eliminar item");
-            Console.WriteLine("5. Buscar item");
             Console.WriteLine("0. Salir");
             Console.Write("Seleccione una opción: ");
 
             string? option = Console.ReadLine();
-            Console.WriteLine();
 
             switch (option)
             {
@@ -36,15 +33,8 @@ class Program
                     UpdateItem();
                     break;
 
-                case "4":
-                    DeleteItem();
-                    break;
-
-                case "5":
-                    SearchItem();
-                    break;
-
                 case "0":
+                    // Salimos del programa
                     return;
 
                 default:
@@ -58,7 +48,6 @@ class Program
 
     static void CreateItem()
     {
-        Console.WriteLine("=== CREAR ITEM ===");
         Console.Write("Ingrese el nombre del item: ");
         string? item = Console.ReadLine();
 
@@ -190,4 +179,43 @@ class Program
             Console.WriteLine($"- {r}");
         }
     }
+
+    static void UpdateItem()
+    {
+        if (items.Count == 0)
+        {
+            Console.WriteLine("No hay items para actualizar.");
+            return;
+        }
+
+        Console.Write("Ingrese el nombre del item a modificar: ");
+        string? oldItem = Console.ReadLine();
+
+        if (string.IsNullOrWhiteSpace(oldItem))
+        {
+            Console.WriteLine("El nombre no puede estar vacío.");
+            return;
+        }
+
+        if (!items.Contains(oldItem))
+        {
+            Console.WriteLine("El item no existe.");
+            return;
+        }
+
+        Console.Write("Ingrese el nuevo nombre del item: ");
+        string? newItem = Console.ReadLine();
+
+        if (string.IsNullOrWhiteSpace(newItem))
+        {
+            Console.WriteLine("El nuevo nombre no puede estar vacío.");
+            return;
+        }
+
+        int index = items.IndexOf(oldItem);
+        items[index] = newItem;
+
+        Console.WriteLine($"Item actualizado correctamente: {newItem}");
+    }
 }
+
